@@ -1,5 +1,5 @@
 import type { Material } from '../types/material';
-export const telegramContact: string | null = null;
+export const telegramContact: string | null = 'llerrrrrrra';
 type DemoInput = Pick<Material, 'id' | 'slug' | 'title' | 'description' | 'sound' | 'format' | 'age' | 'isFree' | 'cover' | 'tasks'>;
 function demo(item: DemoInput): Material {
  return {price:null,isDemo:true,screenshots:[],playUrl:null,downloadUrl:null,telegramOrderUrl:null,...item};
