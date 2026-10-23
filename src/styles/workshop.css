@@ -1,0 +1,126 @@
+/* An author’s workshop: a collection of paper cards with a folder index. */
+:root{--workshop-moss:#596544;--workshop-peach:#f0dfd1;--workshop-rule:#d8d0bd}
+.header{background:var(--paper)}
+.header-inner{height:98px}
+.brand-icon{width:54px;height:54px;flex-shrink:0;border:0;border-radius:0;background:transparent;color:var(--workshop-moss)}
+.brand-book{display:block;width:100%;height:100%}
+.brand-book-spark{color:#a97454}
+.navigation{gap:29px;align-items:center}
+.navigation a.active:after{height:1px;background:var(--workshop-moss);bottom:4px;left:15%;right:15%}
+.navigation button.cart-nav{border:1px solid var(--workshop-rule);border-radius:8px;padding:10px 14px;background:var(--surface)}
+.simple-catalog{padding-top:42px}
+.simple-catalog .catalog-heading{margin-bottom:35px;padding-bottom:26px;border-bottom:1px solid var(--workshop-rule);align-items:center}
+.catalog-title>.eyebrow{font-family:var(--font-body);font-size:9px;letter-spacing:2px;color:var(--workshop-moss);padding:0;border:0;margin:0 0 10px}
+.simple-catalog .catalog-heading h1{display:flex;align-items:center;gap:22px;font-size:clamp(38px,4.3vw,55px);font-weight:500;line-height:1.15}
+.catalog-flower{width:53px;height:53px;color:#b27e5f;transform:rotate(14deg);flex-shrink:0}
+.simple-catalog .catalog-heading>.catalog-total{border-left:2px solid var(--terracotta);margin:0;padding:0 0 0 12px;font-family:var(--font-body);font-size:11px;line-height:1.7;color:var(--muted-ink);white-space:nowrap}
+.catalog-workspace{display:grid;grid-template-columns:208px minmax(0,1fr);gap:42px;align-items:start}
+.simple-catalog .compact-catalog-filter{position:sticky;top:24px;min-width:0;padding:0 0 22px;border-bottom:1px solid var(--workshop-rule)}
+.catalog-index-label{margin:0 0 14px;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted-ink)}
+.simple-catalog .compact-catalog-filter .catalog-shortcuts{display:flex;flex-direction:column;align-items:stretch;gap:4px;margin:0}
+.simple-catalog .compact-catalog-filter .catalog-shortcuts>button{position:relative;display:flex;align-items:center;gap:6px;text-align:left;min-height:46px;line-height:1.5;border:1px solid transparent;border-bottom-color:#e3ddcb;background:transparent;border-radius:0 9px 9px 0;padding:10px 11px;font-size:12px;transition:background .18s,color .18s}
+.simple-catalog .compact-catalog-filter .catalog-shortcuts>button:hover{background:#efecdf;color:var(--ink)}
+.simple-catalog .compact-catalog-filter .catalog-shortcuts>button[aria-pressed=true]{background:var(--workshop-moss);border-color:var(--workshop-moss);color:var(--surface)}
+.simple-catalog .compact-catalog-filter .catalog-shortcuts>button[aria-pressed=true]:before{content:'';position:absolute;width:4px;left:-9px;top:5px;bottom:5px;background:#a97558;border-radius:2px}
+.catalog-shortcuts .filter-count{margin-left:auto;font-size:9px;opacity:.75}
+.catalog-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.catalog-tools .filter-tool{display:flex;align-items:center;justify-content:center;gap:7px;min-height:39px;flex:1;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);padding:8px;font-size:10px;cursor:pointer}
+.catalog-tools .filter-tool svg{width:16px;height:16px}
+.catalog-tools .filter-tool[aria-expanded=true]{background:var(--olive-light);border-color:#a8b18a;color:var(--workshop-moss)}
+.compact-search{margin:0 0 18px}
+.compact-extra{margin:0 0 18px}
+.compact-reset{margin:0 0 18px}
+.compact-search>label{line-height:1.6}
+.compact-search input{padding:11px;font-size:11px}
+.compact-search button{padding:10px;min-width:34px}
+.compact-filter-row{flex-direction:column;gap:7px;margin-bottom:12px}
+.compact-filter-label{width:auto;padding:0;font-size:9px}
+.filter-segments{display:flex;flex-wrap:wrap;gap:3px;border-radius:7px;padding:4px}
+.filter-segments button{font-size:10px;border-radius:5px;padding:9px 7px;min-height:35px}
+.catalog-workspace .catalog-sections{min-width:0}
+.simple-catalog .catalog-section{border:0;padding-top:0;margin-bottom:48px}
+.simple-catalog .catalog-section+.catalog-section{padding-top:8px}
+.simple-catalog .catalog-section-heading{margin-bottom:20px;gap:14px;padding:0 0 13px;border-bottom:1px solid var(--workshop-rule);align-items:center}
+.section-caption{display:flex;align-items:center;gap:14px;min-width:0}
+.simple-catalog .catalog-section-heading h2{font-size:27px;font-weight:500;line-height:1.3}
+.simple-catalog .catalog-section-heading h2:before{display:none}
+.section-count{color:var(--muted-ink);font-size:10px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;width:27px;height:27px;flex-shrink:0}
+.material-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.material-card{position:relative;padding:15px;border:1px solid var(--workshop-rule);border-radius:5px 20px 5px 5px;box-shadow:3px 4px 0 #eae4d4;background:var(--surface);transition:transform .2s,box-shadow .2s,border-color .2s;overflow:visible}
+.material-card:hover{transform:translateY(-3px);border-color:#a4ac89;box-shadow:3px 7px 0 #e5e3d0}
+.card-edition{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:24px;margin:0 0 13px}
+.card-edition .card-badges{position:static;display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.card-edition .format-badge{padding:0;font-family:var(--font-body);font-size:9px;font-weight:600;letter-spacing:.06em;color:var(--workshop-moss);background:transparent;border-radius:0}
+.card-edition .status-badge{font-size:8px;line-height:1.5;padding:3px 7px;border-radius:4px}
+.card-edition .free-badge{color:var(--workshop-moss);background:#e9eddd}
+.card-edition .new-badge{background:var(--workshop-peach);color:#87533c}
+.material-card .cover-link{border-radius:3px 12px 3px 3px;background:var(--paper)}
+.material-card .cover-link:hover>img{transform:none}
+.material-card .card-content{padding:18px 2px 2px}
+.simple-catalog .card-content h3,.card-content h3{font-size:25px;line-height:1.25;font-weight:500;margin-bottom:11px;letter-spacing:-.025em}
+.card-content .material-subtitle{font-size:12px;line-height:1.75;margin-bottom:23px}
+.card-price{font-size:14px;margin-bottom:17px}
+.card-actions{border-top:1px dashed var(--workshop-rule);padding-top:13px;gap:16px}
+.card-actions>.button{border-radius:6px;font-size:11px;padding:11px 15px;flex:initial;margin-left:auto;min-width:116px}
+.card-actions>.card-more{font-size:10px;color:var(--ink);text-decoration:underline;text-decoration-color:#c4b59f;text-underline-offset:4px}
+.button{border-radius:7px;background:var(--workshop-moss)}
+.button:hover{background:#465237}
+.material-dialog{border-radius:8px 27px 8px 8px;box-shadow:9px 10px 0 #a99b7e40,0 25px 85px #392d1b30}
+.material-dialog .dialog-cover,.material-dialog .has-screenshots .dialog-cover{border-radius:4px 14px 4px 4px}
+.dialog-thumbnails>button{border-radius:4px}
+.dialog-thumbnails>button[aria-pressed=true]{border-color:var(--workshop-moss)}
+.material-tags>span{border-radius:4px}
+.purchase-steps li{border-radius:5px 20px 5px 5px;box-shadow:3px 4px 0 #eae4d4}
+.purchase-contact{border-radius:5px 20px 5px 5px;background:#ececde}
+.author-portrait{border-radius:5px 24px 5px 5px;box-shadow:4px 5px 0 #eae4d4;padding:13px}
+.author-portrait img{border-radius:3px 14px 3px 3px}
+footer{background:#ede9da;border-top:1px solid var(--workshop-rule)}
+:where(button,a,input,textarea):focus-visible{outline:2px solid var(--workshop-moss);outline-offset:4px}
+@media(min-width:1500px){.container{width:min(1360px,calc(100% - 112px))}.catalog-workspace{grid-template-columns:225px minmax(0,1fr);gap:55px}.material-grid{gap:29px}}
+@media(max-width:1050px){
+ .catalog-workspace{grid-template-columns:1fr;gap:30px}
+ .simple-catalog .compact-catalog-filter{position:static;border:0;padding:0}
+ .catalog-index-label{display:none}
+ .simple-catalog .compact-catalog-filter .catalog-shortcuts{flex-direction:row;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+ .simple-catalog .compact-catalog-filter .catalog-shortcuts>button{border:1px solid var(--workshop-rule);border-radius:7px 12px 0 0;padding:9px 12px;min-height:41px;gap:7px;background:#eeecdf}
+ .simple-catalog .compact-catalog-filter .catalog-shortcuts>button[aria-pressed=true]:before{display:none}
+ .catalog-tools{justify-content:flex-start;border-bottom:1px solid var(--workshop-rule);padding-bottom:13px}
+ .catalog-tools .filter-tool{flex:initial;min-width:95px}
+ .compact-extra{display:flex;flex-wrap:wrap;gap:20px}
+ .compact-extra[hidden]{display:none}
+ .compact-filter-row{flex-direction:row;align-items:center;margin:0}
+ .filter-segments{width:auto}
+ .compact-filter-label{min-width:52px}
+}
+@media(max-width:700px){
+ .container{width:calc(100% - 36px)}
+ .header-inner{height:82px}
+ .brand-icon{width:43px;height:43px}
+ .brand small{letter-spacing:1px}
+ .navigation{align-items:stretch;background:var(--paper)}
+ .navigation .cart-nav{align-self:stretch;text-align:left}
+ .simple-catalog{padding-top:29px}
+ .simple-catalog .catalog-heading{flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:23px;gap:12px}
+ .catalog-title>.eyebrow{font-size:8px;letter-spacing:1.4px;margin-bottom:9px}
+ .simple-catalog .catalog-heading h1{font-size:36px;gap:10px}
+ .catalog-flower{width:34px;height:34px}
+ .simple-catalog .catalog-heading>.catalog-total{font-size:10px;text-align:left}
+ .simple-catalog .compact-catalog-filter .catalog-shortcuts>button{font-size:10px;min-height:40px;padding:8px 10px}
+ .simple-catalog .catalog-section-heading h2{font-size:25px}
+ .section-caption{gap:9px}
+ .material-grid{grid-template-columns:1fr;gap:25px}
+ .material-card{padding:13px;border-radius:4px 18px 4px 4px}
+ .simple-catalog .card-content h3{font-size:27px}
+ .card-content .material-subtitle{font-size:12px}
+ .card-actions>.button{font-size:12px;padding:12px 17px;min-width:125px}
+ .card-actions>.card-more{font-size:12px}
+ .material-dialog{border-radius:7px 20px 7px 7px}
+}
+@media(prefers-reduced-motion:reduce){.material-card{transition:none}.material-card:hover{transform:none}}
+@media(min-width:1051px) and (max-height:700px){.simple-catalog .compact-catalog-filter{position:static}}
+
+/* Long galleries must not stretch the direct material page on tablets. */
+.detail-grid>div{min-width:0}
+.detail-grid .gallery{flex-wrap:wrap}
+.detail-grid .gallery button{flex:0 1 80px;min-width:0;max-width:100%}
+@media(max-width:1050px){.detail-grid{grid-template-columns:minmax(0,1fr);gap:28px}.detail-copy h1{font-size:clamp(32px,5vw,44px)}}

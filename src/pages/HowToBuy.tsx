@@ -2,5 +2,5 @@ import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
 import PurchaseGuide from '../components/PurchaseGuide';
 export default function HowToBuy() {
-  return <div className="container page section"><Seo title="Как купить игру" description="Как выбрать и заказать авторские логопедические игры Валерии Выстороп через Telegram. Форматы материалов, получение и ответы на вопросы."/><Link className="back-link" to="/catalog">← Выбрать материал</Link><p className="eyebrow">ОТ ВЫБОРА ДО ЗАНЯТИЯ</p><h1>Новая игра —<br/><em>новая история.</em></h1><p className="page-intro">Здесь всё о покупке, получении и форматах материалов.</p><PurchaseGuide full/></div>;
+  return <div className="container page section"><Seo title="Как купить игру" description="Добавьте материалы в корзину, отправьте заявку в Telegram или ВКонтакте и получите игры после оплаты. Бесплатные материалы доступны без заявки."/><Link className="back-link" to="/catalog">← Выбрать материал</Link><h1 id="purchase-heading">Как купить игру</h1><PurchaseGuide full/></div>;
 }
