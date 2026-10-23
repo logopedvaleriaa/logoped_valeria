@@ -65,6 +65,8 @@
 .card-actions>.card-more{font-size:10px;color:var(--ink);text-decoration:underline;text-decoration-color:#c4b59f;text-underline-offset:4px}
 .button{border-radius:7px;background:var(--workshop-moss)}
 .button:hover{background:#465237}
+.button.cart-added{background:var(--olive-light);color:#354220;border:1px solid #b9c19c;transition:none}
+.button.cart-added:hover{background:#dce3c5;color:#354220}
 .material-dialog{border-radius:8px 27px 8px 8px;box-shadow:9px 10px 0 #a99b7e40,0 25px 85px #392d1b30}
 .material-dialog .dialog-cover,.material-dialog .has-screenshots .dialog-cover{border-radius:4px 14px 4px 4px}
 .dialog-thumbnails>button{border-radius:4px}
