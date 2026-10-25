@@ -51,7 +51,7 @@
 .status-badge {background:#ece5d8;color:#82725d}
 .free-badge {background:var(--olive);color:#fffdf7}
 .material-card .card-content {padding:17px 8px 7px}
-.card-content h3 {font-family:'Lora',Georgia,serif;font-size:31px;font-weight:600;line-height:1.13;letter-spacing:-.015em;text-transform:none;margin-bottom:10px}
+.card-content h3 {font-family:var(--font-heading);font-size:31px;font-weight:600;line-height:1.13;letter-spacing:-.015em;text-transform:none;margin-bottom:10px}
 .card-content .material-subtitle {font-size:11px;line-height:1.8;color:var(--muted-ink);margin-bottom:20px}
 .card-price {font-size:13px;font-weight:550;margin-bottom:16px}
 .free-price {color:#627341}
@@ -128,7 +128,7 @@ footer {background:#eee8d8;border-color:var(--line)}
 @media(max-width:700px){.about-page .about-body>div>p{font-size:15px;line-height:1.85}}
 
 /* One typographic system across all pages. */
-:root{--font-body:'Montserrat',sans-serif;--font-heading:'Lora',Georgia,serif;font-family:var(--font-body)}
+:root{--font-body:'Montserrat',sans-serif;--font-heading:'Unbounded',sans-serif;font-family:var(--font-body)}
 h1,h2,h3,
 .simple-catalog h1,
 .simple-catalog h2,

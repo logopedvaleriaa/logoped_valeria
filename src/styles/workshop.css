@@ -126,3 +126,22 @@ footer{background:#ede9da;border-top:1px solid var(--workshop-rule)}
 .detail-grid .gallery{flex-wrap:wrap}
 .detail-grid .gallery button{flex:0 1 80px;min-width:0;max-width:100%}
 @media(max-width:1050px){.detail-grid{grid-template-columns:minmax(0,1fr);gap:28px}.detail-copy h1{font-size:clamp(32px,5vw,44px)}}
+
+/* Unbounded has wider letterforms; keep long titles readable in each frame. */
+h1,h2,h3{overflow-wrap:anywhere}
+h1{font-size:clamp(30px,4.3vw,56px)}
+h2{font-size:clamp(24px,2.6vw,34px)}
+.simple-catalog .catalog-heading h1{font-size:clamp(32px,3.4vw,44px);line-height:1.3}
+.simple-catalog .catalog-section-heading h2{font-size:22px;line-height:1.5}
+.simple-catalog .card-content h3,.card-content h3{font-size:20px;line-height:1.5;font-weight:500}
+.material-dialog .dialog-body h2{font-size:28px;line-height:1.4}
+.cart-embedded>h1{font-size:24px;line-height:1.5}
+.cart-embedded .checkout h2{font-size:20px;line-height:1.5}
+.detail-copy h1{font-size:clamp(28px,3.5vw,42px);line-height:1.4}
+@media(max-width:700px){
+ .simple-catalog .catalog-heading h1{font-size:29px;gap:10px}
+ .simple-catalog .catalog-section-heading h2{font-size:20px}
+ .simple-catalog .card-content h3{font-size:21px}
+ .material-dialog .dialog-body h2{font-size:24px}
+ .cart-embedded>h1{font-size:21px}
+}
