@@ -236,4 +236,14 @@ export const materials: Material[] = [
   downloadUrl: `${import.meta.env?.BASE_URL ?? './'}downloads/flower-workshop-universal.pptx`,
   telegramOrderUrl: null,
  },
+ {
+  id: '28', isNew: true, slug: 'articulation-memory', title: 'Открой волшебство',
+  subtitle: 'Артикуляционная гимнастика · игра мемори', topics: ['articulation'],
+  description: 'Находите одинаковые карточки и выполняйте артикуляционные упражнения, чтобы оживить волшебный мир. На выбор три сюжета: «Звёздная почта», «Мастерская чудес» и «Море находок». Зажигайте звёзды, заряжайте машину чудес или собирайте жемчужины. В игре 16 упражнений: для одной партии можно выбрать от 2 до 16, добавить любимые в избранное и установить таймер на 5, 10 или 15 секунд. Выполняйте гимнастику вместе со взрослым.',
+  instructions: 'После оформления заявки и подтверждения оплаты автор отправит ссылку на браузерную игру. Выберите сюжет, нужные упражнения и длительность таймера, затем начните игру. Открывайте по две карточки и ищите пары. Когда пара найдена, выполните упражнение до окончания таймера или нажмите «Выполнили», чтобы продолжить.',
+  sound: 'Другие', format: 'HTML', age: null, price: 300, isFree: false, isDemo: false,
+  cover: 'screenshots/articulation-memory/cover.jpg', imageFit: 'contain',
+  screenshots: ['screenshots/articulation-memory/star-mail.jpg', 'screenshots/articulation-memory/exercises.jpg', 'screenshots/articulation-memory/exercise.jpg', 'screenshots/articulation-memory/workshop.jpg', 'screenshots/articulation-memory/sea.jpg'],
+  playUrl: null, downloadUrl: null, telegramOrderUrl: null,
+ },
 ];

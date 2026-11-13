@@ -11,8 +11,8 @@ test('combined filters and empty results',()=>{
 });
 test('free, paid, reset and alphabetical order',()=>{
  assert.equal(filter('cost=free').length,14);
- assert.equal(filter('cost=paid').length,7);
- assert.equal(filter('').length,21);
+ assert.equal(filter('cost=paid').length,8);
+ assert.equal(filter('').length,22);
  const titles=filter('sort=title').map(m=>m.title);
  assert.deepEqual(titles,[...titles].sort((a,b)=>a.localeCompare(b,'ru')));
 });
@@ -26,6 +26,10 @@ test('catalog contains only real materials with unique URLs and existing local a
   if(m.isFree){
    assert.equal(m.price,0);
    assert.ok(m.playUrl||m.downloadUrl);
+  }
+  if(!m.isFree){
+   assert.equal(m.playUrl,null);
+   assert.equal(m.downloadUrl,null);
   }
   if(m.downloadUrl) assert.ok(existsSync('public/'+m.downloadUrl.replace(/^\.\//,'')));
  }
@@ -67,7 +71,7 @@ test('browser section combines 3D and HTML while preserving card formats', async
  const {catalogSections,belongsToSection}=await import('../src/data/sections.ts');
  const section=catalogSections.find(s=>s.format==='browser');
  assert.ok(section);
- assert.deepEqual(new Set(filter('format=browser').map(m=>m.slug)),new Set(['derevnya-r','volshebnaya-strana','flashlight','connect-four']));
+ assert.deepEqual(new Set(filter('format=browser').map(m=>m.slug)),new Set(['derevnya-r','volshebnaya-strana','flashlight','connect-four','articulation-memory']));
  assert.deepEqual(filter('format=browser&cost=paid&sound=Л').map(m=>m.slug),['volshebnaya-strana','flashlight']);
  assert.equal(filter('format=browser&cost=free').length,2);
  assert.ok(filter('format=browser').every(m=>belongsToSection(m,section)));
@@ -79,7 +83,7 @@ test('browser section combines 3D and HTML while preserving card formats', async
 });
 
 test('new releases show only marked real materials and respect other filters',()=>{
- assert.deepEqual(filter('new=1').map(m=>m.slug),['volshebnaya-strana']);
+ assert.deepEqual(filter('new=1').map(m=>m.slug),['volshebnaya-strana','articulation-memory']);
  assert.equal(filter('new=1&cost=free').length,0);
  assert.equal(filter('new=1&format=browser&sound=Л').length,1);
  const demo={...materials[0],isDemo:true,isNew:true};
