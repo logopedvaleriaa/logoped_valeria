@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import AddToCart from './AddToCart';
 import { materialFormatLabel } from '../utils/materialFormats';
-import { canOrder, rubles } from '../utils/cart';
+import MaterialPrice from './MaterialPrice';
+import { canOrder } from '../utils/cart';
 import { useMaterialDialog } from './MaterialDialog';
 import type { Material } from '../types/material';
 export function Cover({src,alt,fit,...props}: {src:string;alt:string;fit?:'cover'|'contain';className?:string}) {
@@ -20,7 +21,7 @@ export function Card({item}:{item:Material}) {
   <div className="card-content">
    <h3><button className="card-title-button" onClick={()=>open(item)}>{item.title}</button></h3>
    <p className="material-subtitle">{item.subtitle || (item.sound==='Другие'?'Развитие речи':`Автоматизация звука ${item.sound}`)}</p>
-   <p className={`card-price ${item.isFree&&!item.isDemo?'free-price':''}`}>{item.isDemo?'Демонстрационный материал':item.isFree?'Бесплатно':item.price===null?'Цена не указана':rubles(item.price)}</p>
+   <p className={`card-price ${item.isFree&&!item.isDemo?'free-price':''}`}><MaterialPrice item={item}/></p>
    <div className="card-actions"><button className="card-more" onClick={()=>open(item)} aria-label={`Подробнее о материале «${item.title}»`}>Подробнее</button>
     {playable?<a className="button" href={playable} target="_blank" rel="noopener noreferrer" aria-label={`Играть: ${item.title} (в новой вкладке)`}>▸ Играть</a>:downloadable?<a className="button" href={downloadable} download>Скачать</a>:canOrder(item)?<AddToCart item={item}/>:<button className="button demo-details" onClick={()=>open(item)}>Описание</button>}
    </div>

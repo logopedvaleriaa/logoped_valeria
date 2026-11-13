@@ -170,7 +170,7 @@ test('a browser and print bundle appears in both sections but is ordered once fo
  assert.equal(uniqueMaterialCount(catalogSections.map(s=>filter(`format=${s.format}`))),materials.length);
  const basket=resolveCart([item.id,item.id],materials);
  assert.equal(basket.length,1);
- assert.equal(cartTotal(basket),300);
+ assert.equal(cartTotal(basket,Date.parse('2026-11-12T12:00:00+03:00')),300);
  const message=orderMessage(basket,'','');
  assert.ok(message.includes('Фонарик (HTML + PDF)'));
  assert.ok(message.includes('Материалов: 1'));

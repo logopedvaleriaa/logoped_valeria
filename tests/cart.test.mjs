@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { canOrder, resolveCart, cartTotal, orderMessage, telegramDraft, rubles } from '../src/utils/cart.ts';
+const regularTime=Date.parse('2026-11-12T12:00:00+03:00');
 // Test fixtures only: these prices and materials are never part of the public catalog.
 const paid={id:'test-ppt',title:'Тест «Р» & Л',format:'PPTX',price:125.5,isDemo:false,isFree:false};
 const second={...paid,id:'test-pdf',title:'Тест PDF',format:'PDF',price:200};
@@ -18,12 +19,12 @@ test('stored basket discards duplicates, missing games, demos and malformed data
 test('basket reload uses current catalog prices and calculates total without float errors',()=>{
  const updated={...paid,price:150};
  assert.equal(resolveCart(['test-ppt'],[updated])[0].price,150);
- assert.equal(cartTotal([paid,second]),325.5);
- assert.equal(cartTotal([{price:0.1},{price:0.2}]),0.3);
- assert.equal(cartTotal([]),0);
+ assert.equal(cartTotal([paid,second],regularTime),325.5);
+ assert.equal(cartTotal([{price:0.1},{price:0.2}],regularTime),0.3);
+ assert.equal(cartTotal([],regularTime),0);
 });
 test('Telegram draft has exact recipient, game names, amount and optional text',()=>{
- const text=orderMessage([paid,second],'  Анна  ',' Вопрос & спасибо! ');
+ const text=orderMessage([paid,second],'  Анна  ',' Вопрос & спасибо! ',regularTime);
  assert.ok(text.includes('Имя: Анна'));
  assert.ok(!text.includes('Кто я:'));
  assert.ok(!text.includes('Контакт:'));
