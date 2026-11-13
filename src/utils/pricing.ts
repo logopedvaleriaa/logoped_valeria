@@ -2,8 +2,8 @@ import type { Material } from '../types/material';
 
 export const promotionPercent = 25;
 export const promotionStartsAt = Date.parse('2026-11-13T00:00:00+03:00');
-// The offer includes all of 14 November, through 23:59 Moscow time.
-export const promotionEndsAt = Date.parse('2026-11-15T00:00:00+03:00');
+// The offer includes all of 15 November, through 23:59 Moscow time.
+export const promotionEndsAt = Date.parse('2026-11-16T00:00:00+03:00');
 type PricedMaterial = Pick<Material, 'price' | 'isFree' | 'isDemo'>;
 export function isPromotionActive(now = Date.now()): boolean {
  return now >= promotionStartsAt && now < promotionEndsAt;

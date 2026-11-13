@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { materials } from '../src/data/materials.ts';
 import { isPromotionActive, materialPrice, promotionStartsAt, promotionEndsAt, promotionTimeLeft } from '../src/utils/pricing.ts';
 import { resolveCart, cartTotal, cartOriginalTotal, orderMessage, telegramDraft } from '../src/utils/cart.ts';
-const during=Date.parse('2026-11-14T12:00:00+03:00');
+const during=Date.parse('2026-11-15T12:00:00+03:00');
 const paid=materials.filter(m=>!m.isFree);
 
 test('25% promotion applies to every real paid material and preserves base prices and free materials',()=>{
@@ -20,11 +20,12 @@ test('25% promotion applies to every real paid material and preserves base price
  assert.equal(materialPrice({...item,price:125.5},during),94.13);
 });
 
-test('Moscow deadline includes the entire 23:59 minute on November 14 and never restarts',()=>{
+test('Moscow deadline includes the entire 23:59 minute on November 15 and never restarts',()=>{
  assert.equal(isPromotionActive(promotionStartsAt-1),false);
  assert.equal(isPromotionActive(promotionStartsAt),true);
- assert.equal(isPromotionActive(Date.parse('2026-11-14T23:59:59.999+03:00')),true);
- assert.equal(promotionEndsAt,Date.parse('2026-11-14T21:00:00Z'));
+ assert.equal(isPromotionActive(Date.parse('2026-11-15T00:00:00+03:00')),true);
+ assert.equal(isPromotionActive(Date.parse('2026-11-15T23:59:59.999+03:00')),true);
+ assert.equal(promotionEndsAt,Date.parse('2026-11-15T21:00:00Z'));
  assert.equal(isPromotionActive(promotionEndsAt),false);
  assert.equal(isPromotionActive(promotionEndsAt+86400000),false);
  for(const item of paid){
