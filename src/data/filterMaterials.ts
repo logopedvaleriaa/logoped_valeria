@@ -15,5 +15,10 @@ export function filterMaterials(materials: Material[], params: URLSearchParams):
   (!value('age') || m.age === value('age')) &&
   (!value('new') || (m.isNew === true && !m.isDemo)) &&
   (!value('cost') || (value('cost') === 'free' ? m.isFree : !m.isFree))
- ).sort((a,b) => value('sort') === 'title' ? a.title.localeCompare(b.title,'ru') : Number(a.id)-Number(b.id));
+ ).sort((a,b) => {
+  if(value('sort') === 'title') return a.title.localeCompare(b.title,'ru');
+  const newFirst=Number(!!b.isNew)-Number(!!a.isNew);
+  if(newFirst) return newFirst;
+  return a.isNew && b.isNew ? Number(b.id)-Number(a.id) : Number(a.id)-Number(b.id);
+ });
 }
