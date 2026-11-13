@@ -243,7 +243,7 @@ export const materials: Material[] = [
   instructions: 'После оформления заявки и подтверждения оплаты автор отправит ссылку на браузерную игру. Выберите сюжет, нужные упражнения и длительность таймера, затем начните игру. Открывайте по две карточки и ищите пары. Когда пара найдена, выполните упражнение до окончания таймера или нажмите «Выполнили», чтобы продолжить.',
   sound: 'Другие', format: 'HTML', age: null, price: 300, isFree: false, isDemo: false,
   cover: 'screenshots/articulation-memory/cover.jpg', imageFit: 'contain',
-  screenshots: ['screenshots/articulation-memory/star-mail.jpg', 'screenshots/articulation-memory/exercises.jpg', 'screenshots/articulation-memory/exercise.jpg', 'screenshots/articulation-memory/workshop.jpg', 'screenshots/articulation-memory/sea.jpg'],
+  screenshots: ['screenshots/articulation-memory/star-mail.jpg', 'screenshots/articulation-memory/exercises.jpg', 'screenshots/articulation-memory/exercise.jpg', 'screenshots/articulation-memory/workshop-full.jpg', 'screenshots/articulation-memory/sea-full.jpg'],
   playUrl: null, downloadUrl: null, telegramOrderUrl: null,
  },
 ];
