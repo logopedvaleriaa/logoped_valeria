@@ -246,4 +246,14 @@ export const materials: Material[] = [
   screenshots: ['screenshots/articulation-memory/star-mail.jpg', 'screenshots/articulation-memory/exercises.jpg', 'screenshots/articulation-memory/exercise.jpg', 'screenshots/articulation-memory/workshop-full.jpg', 'screenshots/articulation-memory/sea-full.jpg'],
   playUrl: null, downloadUrl: null, telegramOrderUrl: null,
  },
+ {
+  id: '29', isNew: true, slug: 'speech-games-r', title: 'Игры на звук Р',
+  subtitle: 'Мемори · Крестики-нолики · 4 в ряд',
+  description: 'Три браузерные игры в одном комплекте. В мемори находите пары акварельных картинок и называйте слова со звуком Р: три раунда на 5, 10 и 15 пар. В крестиках-ноликах играйте вдвоём, называйте картинки и занимайте клетки своим знаком — в каждом из трёх раундов новый набор из девяти картинок. Слова подобраны на сочетания согласных со звуком Р: КР, ГР, ТР, ДР и другие. В «4 в ряд» по очереди опускайте фишки и собирайте линию из четырёх по горизонтали, вертикали или диагонали.',
+  instructions: 'После оформления заявки и подтверждения оплаты автор отправит ссылку на комплект. Откройте её в браузере и выберите игру во вкладках сверху. В мемори и крестиках-ноликах переходите к следующему раунду после завершения текущего. В «4 в ряд» нажимайте на нужный столбец, чтобы опустить фишку.',
+  sound: 'Р', format: 'HTML', age: null, price: 300, isFree: false, isDemo: false,
+  cover: 'screenshots/speech-games-r/cover.jpg', imageFit: 'contain',
+  screenshots: ['screenshots/speech-games-r/tic-start.jpg', 'screenshots/speech-games-r/memory-round-2.jpg', 'screenshots/speech-games-r/tic-playing.jpg', 'screenshots/speech-games-r/four-playing.jpg'],
+  playUrl: null, downloadUrl: null, telegramOrderUrl: null,
+ },
 ];

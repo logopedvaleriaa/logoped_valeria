@@ -7,7 +7,7 @@ const during=Date.parse('2026-11-15T12:00:00+03:00');
 const paid=materials.filter(m=>!m.isFree);
 
 test('25% promotion applies to every real paid material and preserves base prices and free materials',()=>{
- assert.equal(paid.length,8);
+ assert.equal(paid.length,9);
  for(const item of paid){
   const base=item.price;
   assert.equal(materialPrice(item,during),new Map([[500,375],[300,225],[200,150]]).get(base));
@@ -40,9 +40,9 @@ test('restored baskets use discounted totals once per bundle and recover normal 
  assert.equal(restored.length,1);
  assert.equal(cartTotal(restored,during),225);
  assert.equal(cartTotal(restored,promotionEndsAt),300);
- assert.equal(cartOriginalTotal(paid),2300);
- assert.equal(cartTotal(paid,during),1725);
- assert.equal(cartTotal(paid,promotionEndsAt),2300);
+ assert.equal(cartOriginalTotal(paid),2600);
+ assert.equal(cartTotal(paid,during),1950);
+ assert.equal(cartTotal(paid,promotionEndsAt),2600);
 });
 
 test('Telegram and VK draft text use matching discounted line items and total, then remove the offer at expiry',()=>{
