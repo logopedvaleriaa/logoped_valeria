@@ -253,7 +253,7 @@ export const materials: Material[] = [
   instructions: 'После оформления заявки и подтверждения оплаты автор отправит ссылку на комплект. Откройте её в браузере и выберите игру во вкладках сверху. В мемори и крестиках-ноликах переходите к следующему раунду после завершения текущего. В «4 в ряд» нажимайте на нужный столбец, чтобы опустить фишку.',
   sound: 'Р', format: 'HTML', age: null, price: 300, isFree: false, isDemo: false,
   cover: 'screenshots/speech-games-r/cover.jpg', imageFit: 'contain',
-  screenshots: ['screenshots/speech-games-r/tic-start.jpg', 'screenshots/speech-games-r/memory-round-2.jpg', 'screenshots/speech-games-r/tic-playing.jpg', 'screenshots/speech-games-r/four-playing.jpg'],
+  screenshots: ['screenshots/speech-games-r/memory-round-2.jpg', 'screenshots/speech-games-r/tic-start.jpg', 'screenshots/speech-games-r/tic-playing.jpg', 'screenshots/speech-games-r/four-playing.jpg'],
   playUrl: null, downloadUrl: null, telegramOrderUrl: null,
  },
 ];
